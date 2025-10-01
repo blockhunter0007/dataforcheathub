@@ -16,14 +16,19 @@ json_load = False
 dateipfad = Path(__file__).parent / "data" / "server.json"
 script_ordner = Path(__file__).parent
 url = 'https://blockhunter0007.github.io/cheathubdumpingground/server.json'
-response = requests.get(url)
-if response.status_code == 200:
-    daten = response.json()  # JSON direkt parsen
-    with open(dateipfad, "w", encoding="utf-8") as f:
-        json.dump(daten, f, ensure_ascii=False, indent=4)
-    json_load = True
-else:
-    print("Fehler beim Abrufen:", response.status_code)
+
+try:
+    response = requests.get(url)
+    if response.status_code == 200:
+        daten = response.json()  # JSON direkt parsen
+        with open(dateipfad, "w", encoding="utf-8") as f:
+            json.dump(daten, f, ensure_ascii=False, indent=4)
+        json_load = True
+    else:
+        print("Fehler beim Abrufen:", response.status_code)
+        json_load = False
+exept requests.exceptions.RequestException as e:
+    print("Fehler beim Abrufen der URL:", e)
     json_load = False
 
 #json_string = ''
@@ -37,18 +42,25 @@ if json_load == False:
         print(f"Datei nicht gefunden: {dateipfad}")
         exit(1)
 # JSON-Datei laden
-    with open(dateipfad, "r", encoding="utf-8") as f:
-        daten = json.load(f)
+    try:
+        with open(dateipfad, "r", encoding="utf-8") as f:
+            daten = json.load(f)
 # Beispielzugriff auf die Daten
-    print("Geladene Daten:")
-    print(daten)
+        print("Geladene Daten:")
+        print(daten)
+    except json.JSONDecodeError:
+        print('failed finding jsnversion (initialisationcheck) please turn on your wifi to install our programm')
+        print('we only need wifi to see what cheats we have and download them.')
+        print('after turning on the wifi once you can use our product completly offline')
+        time.sleep(10)
+        exit(1)
 
 if "version" in daten:
     if daten["version"] != version:
         print('update')
         print('your version', version, 'is not the newest its', daten["version"])
 else:
-    print('faild finding jsnversion (initialisationcheck) please turn on your wifi to install our programm')
+    print('failed finding jsnversion (initialisationcheck) please turn on your wifi to install our programm')
     print('we only need wifi to see what cheats we have and download them.')
     print('after turning on the wifi once you can use our product completly offline')
     time.sleep(10)
