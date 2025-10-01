@@ -30,9 +30,6 @@ else:
 #daten = json.loads(json_string)
 #print(daten["Hund"])   # Hund
 
-if daten["version"] != version:
-    print('update')
-    print('your version', version, 'is not the newest its', daten["version"])
 # Pfad zur server.json im Unterordner "data"
 if json_load == False:
 # Prüfen, ob die Datei existiert
@@ -46,6 +43,16 @@ if json_load == False:
     print("Geladene Daten:")
     print(daten)
 
+if "version" in daten:
+    if daten["version"] != version:
+        print('update')
+        print('your version', version, 'is not the newest its', daten["version"])
+else:
+    print('faild finding jsnversion (initialisationcheck) please turn on your wifi to install our programm')
+    print('we only need wifi to see what cheats we have and download them.')
+    print('after turning on the wifi once you can use our product completly offline')
+    time.sleep(10)
+    exit(1)
 # Beispiel: einzelne Werte auslesen (falls die Struktur bekannt ist)
 # z.B. wenn die JSON so aussieht: {"user": {"name": "Blockhunter", "age": 20}}
 # name = daten["user"]["name"]
