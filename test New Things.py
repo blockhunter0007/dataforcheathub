@@ -27,7 +27,7 @@ try:
     else:
         print("Fehler beim Abrufen:", response.status_code)
         json_load = False
-exept requests.exceptions.RequestException as e:
+except requests.exceptions.RequestException as e:
     print("Fehler beim Abrufen der URL:", e)
     json_load = False
 
