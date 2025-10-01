@@ -16,7 +16,12 @@ json_load = False
 dateipfad = Path(__file__).parent / "data" / "server.json"
 script_ordner = Path(__file__).parent
 url = 'https://blockhunter0007.github.io/cheathubdumpingground/server.json'
+root = tk.Tk()
+root.title("Cheats")
 
+for key in daten["cheats"]:
+    btn = tk.Button(root, text=key)
+    btn.pack(pady=5)
 try:
     response = requests.get(url)
     if response.status_code == 200:
