@@ -19,9 +19,6 @@ url = 'https://blockhunter0007.github.io/cheathubdumpingground/server.json'
 root = tk.Tk()
 root.title("Cheats")
 
-for key in daten["cheats"]:
-    btn = tk.Button(root, text=key)
-    btn.pack(pady=5)
 try:
     response = requests.get(url)
     if response.status_code == 200:
@@ -70,8 +67,25 @@ else:
     print('after turning on the wifi once you can use our product completly offline')
     time.sleep(10)
     exit(1)
+
+#################################
+#            CTK                #
+#################################
+
+button_frame = ctk.CTkFrame(root)
+button_frame.pack(padx=20, pady=20, fill="both", expand=True)
+
+# Funktion, die beim Klick ausgeführt wird
+def button_click(name):
+    print(f"Button {name} wurde geklickt!")
+
+# Buttons dynamisch aus JSON erstellen
+for product_name in daten["products"]:
+    btn = ctk.CTkButton(button_frame, text=product_name, command=lambda n=product_name: button_click(n))
+    btn.pack(pady=5, padx=10, fill="x")  # fill="x" damit Buttons die ganze Breite ausfüllen
 # Beispiel: einzelne Werte auslesen (falls die Struktur bekannt ist)
 # z.B. wenn die JSON so aussieht: {"user": {"name": "Blockhunter", "age": 20}}
 # name = daten["user"]["name"]
 # alter = daten["user"]["age"]
 # print(name, alter)
+root.mainloop()
