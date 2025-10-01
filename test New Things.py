@@ -19,6 +19,7 @@ if response.status_code == 200:
     daten = response.json()  # JSON direkt parsen
     with open(dateipfad, "w", encoding="utf-8") as f:
         json.dump(daten, f, ensure_ascii=False, indent=4)
+    json_load = True
 else:
     print("Fehler beim Abrufen:", response.status_code)
     json_load = False
@@ -45,7 +46,7 @@ if json_load == False:
     offline_start()
 
 
-def offline_start
+def offline_start():
     json_datei = script_ordner / "data" / "server.json"
 # Prüfen, ob die Datei existiert
     if not json_datei.exists():
