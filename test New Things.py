@@ -36,20 +36,28 @@ if script_ordner != script_ordner2:
     time.sleep(20)
 else:
     print('pass test folder load')
+
+if daten["version"] != version:
+    print('update')
+    print('your version', version, 'is not the newest its', daten["version"])
 # Pfad zur server.json im Unterordner "data"
-if json_load = false:
+if json_load == False:
+    offline_start()
+
+
+def offline_start
     json_datei = script_ordner / "data" / "server.json"
 # Prüfen, ob die Datei existiert
-if not json_datei.exists():
-    print(f"Datei nicht gefunden: {json_datei}")
-    exit(1)
+    if not json_datei.exists():
+        print(f"Datei nicht gefunden: {json_datei}")
+        exit(1)
 # JSON-Datei laden
-with open(json_datei, "r", encoding="utf-8") as f:
-    daten = json.load(f)
+    with open(json_datei, "r", encoding="utf-8") as f:
+        daten = json.load(f)
 
 # Beispielzugriff auf die Daten
-print("Geladene Daten:")
-print(daten)
+    print("Geladene Daten:")
+    print(daten)
 
 # Beispiel: einzelne Werte auslesen (falls die Struktur bekannt ist)
 # z.B. wenn die JSON so aussieht: {"user": {"name": "Blockhunter", "age": 20}}
