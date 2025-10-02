@@ -10,6 +10,7 @@ BASE_URL = "https://blockhunter0007.github.io/cheathubdumpingground/"
 SERVER_JSON_URL = f"{BASE_URL}server.json"
 UPDATE_URL = f"{BASE_URL}update" # Annahme: Dies ist die URL zur neuen .exe oder .py Datei
 
+
 # --- Hauptanwendungsklasse ---
 class CheatHubApp(ctk.CTk):
     def __init__(self, cheats_data):
