@@ -12,6 +12,7 @@ def update_version():
     print("Outdated version detected, please update to the latest version.")
 
 
+
 def onclick():
     print("Button clicked!")
 
