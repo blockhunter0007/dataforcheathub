@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CheatHub - Hochqualitative, virenfreie Cheats. Kostenlos, spendenbasiert und community-geprüft.">
+    <meta property="og:title" content="CheatHub - Hochqualitative, virenfreie Cheats">
+    <meta property="og:description" content="Kostenlose, community-geprüfte Cheats auf Spendenbasis. Sicherheit und Qualität stehen an erster Stelle.">
+    <meta property="og:type" content="website">
+    <title>CheatHub - Hochqualitative, virenfreie Cheats</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CheatHub",
+        "description": "Hochqualitative, virenfreie Cheats auf Spendenbasis",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --color-primary-black: #0b0b0f;
+            --color-secondary-black: #0f0f12;
+            --color-primary-purple: #7b2cff;
+            --color-secondary-purple: #6a3bff;
+            --color-pastel-purple: #B69BFF;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #b8b8b8;
+            --color-text-muted: #808080;
+            --color-border: rgba(123, 44, 255, 0.2);
+            --color-card-bg: rgba(15, 15, 18, 0.8);
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ===== Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-primary-black);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===== Header & Navigation ===== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--color-pastel-purple);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-primary-black) 0%, var(--color-secondary-black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(123, 44, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-pastel-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary-purple);
+            color: var(--color-text-primary);
+            box-shadow: 0 0 20px rgba(123, 44, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-secondary-purple);
+            box-shadow: 0 0 30px rgba(123, 44, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-primary-purple);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(123, 44, 255, 0.1);
+            border-color: var(--color-pastel-purple);
+        }
+        
+        /* ===== Trust Bar ===== */
+        .trust-bar {
+            background: var(--color-secondary-black);
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            color: var(--color-primary-purple);
+        }
+        
+        .trust-text h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .trust-text p {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        
+        /* ===== Section Styles ===== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* ===== Features Grid ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary-purple);
+            box-shadow: 0 10px 40px rgba(123, 44, 255, 0.2);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary-purple);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* ===== Products Grid ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary-purple);
+            box-shadow: 0 10px 40px rgba(123, 44, 255, 0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--color-secondary-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        
+        .product-header h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .product-version {
+            background: rgba(123, 44, 255, 0.2);
+            color: var(--color-pastel-purple);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .product-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        
+        .product-description {
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .virus-scan {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .virus-scan.clean {
+            color: var(--color-success);
+        }
+        
+        .checksum {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            word-break: break-all;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-download {
+            flex: 1;
+            background: var(--color-primary-purple);
+            color: var(--color-text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-download:hover {
+            background: var(--color-secondary-purple);
+            box-shadow: 0 0 20px rgba(123, 44, 255, 0.4);
+        }
+        
+        /* ===== Community Section ===== */
+        .community-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .community-card {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .community-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            color: var(--color-primary-purple);
+        }
+        
+        .testimonials {
+            margin-top: 3rem;
+        }
+        
+        .testimonial {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            color: var(--color-pastel-purple);
+            font-weight: 600;
+        }
+        
+        /* ===== Donate Section ===== */
+        .donate-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .donate-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .donate-btn {
+            background: var(--color-card-bg);
+            border: 2px solid var(--color-primary-purple);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .donate-btn:hover {
+            background: rgba(123, 44, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== FAQ Section ===== */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--color-text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--color-pastel-purple);
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+            font-size: 1.5rem;
+            color: var(--color-primary-purple);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--color-secondary-black);
+            border-top: 1px solid var(--color-border);
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-pastel-purple);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-primary);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--color-primary-purple);
+            border-color: var(--color-primary-purple);
+        }
+        
+        .disclaimer {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: var(--color-warning);
+        }
+        
+        .disclaimer h4 {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* ===== Modal ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--color-secondary-black);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .modal-actions .btn {
+            flex: 1;
+        }
+        
+        /* ===== Loading Skeleton ===== */
+        .skeleton {
+            background: linear-gradient(90deg, var(--color-secondary-black) 25%, rgba(123, 44, 255, 0.1) 50%, var(--color-secondary-black) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--color-secondary-black);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--color-border);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* ===== Utilities ===== */
+        .hidden {
+            display: none;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="80" height="80" rx="16" stroke="currentColor" stroke-width="4" fill="url(#gradient)"/>
+                    <path d="M30 50L45 65L70 35" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="10" y1="10" x2="90" y2="90">
+                            <stop offset="0%" style="stop-color:#7b2cff"/>
+                            <stop offset="100%" style="stop-color:#B69BFF"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>CheatHub</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#donate">Spenden</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü öffnen">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>CheatHub – Hochqualitative, virenfreie Cheats</h1>
+            <p>Deine vertrauenswürdige Quelle für sichere, kostenlose und community-geprüfte Gaming-Tools. Auf Spendenbasis, von der Community für die Community.</p>
+            <div class="cta-buttons">
+                <a href="#downloads" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    Zu den Downloads
+                </a>
+                <a href="#community" class="btn btn-secondary">
+                    Community beitreten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+                <div class="trust-text">
+                    <h3>Virenfrei geprüft</h3>
+                    <p>Regelmäßige Scans</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                </svg>
+                <div class="trust-text">
+                    <h3>100% Kostenlos</h3>
+                    <p>Keine versteckten Kosten</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <div class="trust-text">
+                    <h3>Spendenbasiert</h3>
+                    <p>Unterstütze das Projekt</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <div class="trust-text">
+                    <h3>Community-geprüft</h3>
+                    <p>Von Nutzern für Nutzer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="section-header">
+            <h2>Warum CheatHub?</h2>
+            <p>Wir setzen auf Qualität, Sicherheit und eine starke Community</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <h3>Höchste Qualität</h3>
+                <p>Alle Cheats werden gründlich getestet und optimiert, bevor sie veröffentlicht werden. Wir legen großen Wert auf Performance und Stabilität.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <h3>Sicherheit zuerst</h3>
+                <p>Jeder Download wird vor der Veröffentlichung auf Viren gescannt. Deine Sicherheit hat für uns oberste Priorität.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+                <h3>Aktiver Support</h3>
+                <p>Unsere Community ist immer bereit zu helfen. Bei Fragen oder Problemen stehen wir dir zur Seite.</p>
+            </div>
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <h3>Offenes Feedback</h3>
+                <p>Deine Meinung zählt! Wir verbessern CheatHub kontinuierlich basierend auf dem Feedback unserer Community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="section" id="downloads">
+        <div class="section-header">
+            <h2>Verfügbare Downloads</h2>
+            <p>Alle unsere Tools sind kostenlos, virenfrei und regelmäßig aktualisiert</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded dynamically via JavaScript -->
+            <div class="product-card skeleton" style="height: 500px;"></div>
+            <div class="product-card skeleton" style="height: 500px;"></div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section" id="community">
+        <div class="section-header">
+            <h2>Werde Teil unserer Community</h2>
+            <p>Tausche dich mit anderen Nutzern aus, erhalte Support und bleibe auf dem Laufenden</p>
+        </div>
+        <div class="community-content">
+            <div class="community-card">
+                <svg class="community-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+                <h3>Discord Server</h3>
+                <p>Tritt unserem Discord-Server bei und chatte in Echtzeit mit der Community, stelle Fragen und erhalte schnellen Support.</p>
+                <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Discord beitreten</a>
+            </div>
+            <div class="community-card">
+                <svg class="community-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <h3>Community Forum</h3>
+                <p>Diskutiere über neue Features, teile deine Erfahrungen und hilf anderen Mitgliedern in unserem Forum.</p>
+                <a href="#" class="btn btn-secondary" style="margin-top: 1rem;">Zum Forum</a>
+            </div>
+            <div class="community-card">
+                <svg class="community-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                <h3>Feedback & Vorschläge</h3>
+                <p>Hast du Ideen für neue Features oder Verbesserungen? Teile sie mit uns und gestalte CheatHub aktiv mit.</p>
+                <a href="#contact" class="btn btn-secondary" style="margin-top: 1rem;">Feedback geben</a>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.75rem;">Was unsere Community sagt</h3>
+            <div class="testimonial">
+                <p class="testimonial-text">"CheatHub ist die beste Quelle für sichere Cheats. Die Community ist hilfsbereit und die Downloads funktionieren einwandfrei!"</p>
+                <p class="testimonial-author">— MaxGamer_DE</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"Endlich eine vertrauenswürdige Plattform ohne nervige Werbung oder dubiose Downloads. Großes Lob an das Team!"</p>
+                <p class="testimonial-author">— ProPlayer2024</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">"Die regelmäßigen Updates und der aktive Support machen CheatHub zu meiner ersten Wahl. Klare Empfehlung!"</p>
+                <p class="testimonial-author">— TechNinja88</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="section" id="donate">
+        <div class="donate-content">
+            <div class="section-header">
+                <h2>Unterstütze CheatHub</h2>
+                <p>CheatHub ist und bleibt kostenlos für alle. Deine Spende hilft uns, die Server zu betreiben, neue Features zu entwickeln und die Community weiter wachsen zu lassen. Jeder Beitrag zählt!</p>
+            </div>
+            <div class="donate-buttons">
+                <a href="#" class="donate-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.067 8.478c.492.88.556 2.014.3 3.327-.74 3.806-3.276 5.12-6.514 5.12h-.5a.805.805 0 0 0-.794.68l-.04.22-.63 3.993-.028.15a.806.806 0 0 1-.795.68H8.334c-.397 0-.679-.356-.588-.748l1.24-7.849h-.001L9.8 8.006c.1-.658.58-1.15 1.238-1.15h2.067c4.267 0 7.163-2.35 7.962-6.384C21.444.84 22.24 4.15 20.067 8.478z"/>
+                    </svg>
+                    PayPal Spende
+                </a>
+                <a href="#" class="donate-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.386 2c.997 0 1.914.416 2.591 1.174.677.759 1.023 1.762 1.023 2.826 0 .995-.295 1.93-.845 2.708l-.845.072a5.45 5.45 0 0 0 1.229-3.422c0-.844-.259-1.637-.73-2.237-.471-.599-1.123-.935-1.839-.935H7.03c-.716 0-1.368.336-1.839.935-.471.6-.73 1.393-.73 2.237 0 1.298.467 2.515 1.314 3.422l-.845-.072C4.38 7.93 4.085 6.995 4.085 6c0-1.064.346-2.067 1.023-2.826C5.785 2.416 6.702 2 7.699 2h7.687z"/>
+                        <circle cx="12" cy="14.5" r="2"/>
+                        <path d="M12 16.5c-1.932 0-3.5 1.568-3.5 3.5v2h7v-2c0-1.932-1.568-3.5-3.5-3.5z"/>
+                    </svg>
+                    Patreon
+                </a>
+                <a href="#" class="donate-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-.766-1.641A4.567 4.567 0 0 0 15.5 2.5h-7c-1.256 0-2.443.507-3.318 1.608-.378.478-.647 1.043-.766 1.641l-.132.666a2.5 2.5 0 0 0-.084.625v10c0 .828.336 1.578.879 2.121A2.993 2.993 0 0 0 7.5 20h9a2.993 2.993 0 0 0 2.121-.879A2.993 2.993 0 0 0 19.5 17V7.04a2.5 2.5 0 0 0-.084-.625zM12 17.75A5.25 5.25 0 1 1 12 7.25a5.25 5.25 0 0 1 0 10.5zm0-8.5a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5z"/>
+                    </svg>
+                    Buy Me a Coffee
+                </a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-size: 0.95rem;">
+                💜 Deine Unterstützung ermöglicht es uns, CheatHub kostenlos und werbefrei zu halten. Vielen Dank an alle, die bereits gespendet haben!
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="section-header">
+            <h2>Häufig gestellte Fragen</h2>
+            <p>Hier findest du Antworten auf die wichtigsten Fragen</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Sind die Cheats wirklich sicher und virenfrei?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Ja, alle unsere Downloads werden vor der Veröffentlichung gründlich auf Viren und Malware gescannt. Wir verwenden mehrere Antivirenprogramme, um die Sicherheit zu gewährleisten. Zusätzlich stellen wir für jeden Download SHA256-Checksums bereit, damit du die Integrität der Dateien selbst überprüfen kannst.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Warum ist CheatHub kostenlos?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Wir glauben daran, dass Qualitätssoftware für alle zugänglich sein sollte. CheatHub wird auf Spendenbasis betrieben – wer kann und möchte, unterstützt uns finanziell, aber niemand ist dazu verpflichtet. Unser Ziel ist es, eine starke Community aufzubauen, nicht Profit zu maximieren.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Kann ich gebannt werden, wenn ich diese Cheats verwende?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Ja, das ist möglich. Die Verwendung von Cheats kann gegen die Nutzungsbedingungen der meisten Spiele verstoßen und zu einem permanenten Bann führen. Wir übernehmen keine Haftung für Konsequenzen, die aus der Verwendung unserer Software entstehen. Du verwendest alle Downloads auf eigene Verantwortung.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Wie melde ich Probleme oder Bugs?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Am besten meldest du Probleme über unseren Discord-Server oder unser Community-Forum. Dort können dir andere Nutzer und unser Support-Team schnell helfen. Alternativ kannst du uns auch über das Kontaktformular erreichen. Bitte beschreibe das Problem so detailliert wie möglich.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Wie oft werden die Cheats aktualisiert?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Wir versuchen, unsere Cheats so aktuell wie möglich zu halten, besonders nach größeren Spiel-Updates. Die Häufigkeit der Updates hängt von der Komplexität des Spiels und den Änderungen ab. Abonniere unseren Discord-Server, um über neue Versionen benachrichtigt zu werden.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Kann ich eigene Cheats bei CheatHub einreichen?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Ja, wir freuen uns über Beiträge aus der Community! Kontaktiere uns über Discord oder unser Kontaktformular, wenn du einen Cheat einreichen möchtest. Jeder eingereichte Cheat wird gründlich auf Sicherheit und Qualität geprüft, bevor er veröffentlicht wird.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="disclaimer">
+                <h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline;">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Wichtiger rechtlicher Hinweis
+                </h4>
+                <p>
+                    Die Verwendung von Cheats kann gegen die Nutzungsbedingungen von Spielen und Online-Diensten verstoßen und zu Account-Sperrungen oder Bannungen führen. CheatHub stellt die Software lediglich bereit – die Verwendung erfolgt ausschließlich auf eigene Verantwortung. Wir geben an, dass alle Dateien vor dem Upload auf Viren geprüft werden, übernehmen jedoch keine Haftung für eventuelle Schäden, Datenverluste oder Sperrungen. CheatHub bietet keinerlei Anleitungen zum Entwickeln, Modifizieren von Cheats oder zur Umgehung von Anti-Cheat-Systemen. Nutze unsere Software verantwortungsvoll und respektiere die Rechte der Spielentwickler.
+                </p>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>CheatHub</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">
+                        Hochqualitative, virenfreie Cheats auf Spendenbasis. Von der Community für die Community.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Discord">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#donate">Spenden</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Nutzungsbedingungen</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Haftungsausschluss</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@cheathub.example">support@cheathub.example</a></li>
+                        <li><a href="#">Discord Support</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Bug Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CheatHub. Alle Rechte vorbehalten. | Cheating kann gegen Nutzungsbedingungen verstoßen - Verwendung auf eigene Gefahr.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Confirmation Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Download-Bestätigung</h3>
+                <button class="modal-close" id="modalClose" aria-label="Schließen">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 1rem; color: var(--color-text-secondary);">
+                    Bevor du den Download startest, bestätige bitte, dass du die folgenden Risiken verstanden hast:
+                </p>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="confirmRisks" name="confirmRisks">
+                    <label for="confirmRisks" style="color: var(--color-text-secondary); font-size: 0.95rem;">
+                        Ich verstehe, dass die Verwendung von Cheats gegen die Nutzungsbedingungen von Spielen verstoßen kann und zu permanenten Bannungen führen kann. Ich verwende diese Software auf eigene Verantwortung.
+                    </label>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancel">Abbrechen</button>
+                <button class="btn btn-primary" id="modalConfirm" disabled>Download starten</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== Global Variables =====
+        let currentDownloadUrl = '';
+        
+        // ===== Mobile Menu Toggle =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isActive);
+            mobileMenuBtn.textContent = isActive ? '✕' : '☰';
+        });
+        
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+        
+        // ===== FAQ Accordion =====
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = '0';
+                    question.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+        
+        // ===== Load Products =====
+        async function loadProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            
+            try {
+                // Try to load from products.json
+                const response = await fetch('data/products.json');
+                
+                if (!response.ok) {
+                    throw new Error('Products file not found');
+                }
+                
+                const products = await response.json();
+                displayProducts(products);
+            } catch (error) {
+                console.warn('Could not load products.json, using fallback data');
+                // Fallback data
+                const fallbackProducts = [
+                    {
+                        "id": "cheat1",
+                        "name": "AimMaster v2",
+                        "version": "2.1.0",
+                        "size": "5.4 MB",
+                        "description": "Präzise Zielhilfe mit geringer Auswirkung auf Performance.",
+                        "screenshot": "assets/aimmaster.png",
+                        "download": "downloads/aimmaster_v2.1.0.zip",
+                        "sha256": "abc123def456789012345678901234567890123456789012345678901234",
+                        "virus_scan": {
+                            "status": "clean",
+                            "checked_at": "2025-10-01"
+                        }
+                    },
+                    {
+                        "id": "cheat2",
+                        "name": "VisualTune",
+                        "version": "1.0.3",
+                        "size": "3.2 MB",
+                        "description": "Grafikoptimierungen und Überlagerungen.",
+                        "screenshot": "assets/visualtune.png",
+                        "download": "downloads/visualtune_1.0.3.zip",
+                        "sha256": "xyz789abc012345678901234567890123456789012345678901234567890",
+                        "virus_scan": {
+                            "status": "clean",
+                            "checked_at": "2025-10-01"
+                        }
+                    }
+                ];
+                displayProducts(fallbackProducts);
+            }
+        }
+        
+        function displayProducts(products) {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = createProductCard(product);
+                productsGrid.appendChild(productCard);
+            });
+        }
+        
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            
+            const scanDate = new Date(product.virus_scan.checked_at).toLocaleDateString('de-DE');
+            
+            card.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.screenshot}" alt="${product.name}" 
+                         onerror="this.parentElement.innerHTML='<svg width=\'60\' height=\'60\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\' ry=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><p>Bild nicht verfügbar</p>'" 
+                         loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-content">
+                    <div class="product-header">
+                        <div>
+                            <h3>${product.name}</h3>
+                        </div>
+                        <span class="product-version">v${product.version}</span>
+                    </div>
+                    <div class="product-meta">
+                        <span>📦 ${product.size}</span>
+                    </div>
+                    <p class="product-description">${product.description}</p>
+                    <div class="virus-scan clean">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span>Virenscan: Sauber (${scanDate})</span>
+                    </div>
+                    <div class="checksum">
+                        <strong>SHA256:</strong> ${product.sha256}
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-download" data-download="${product.download}" data-name="${product.name}">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 0.5rem;">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add download event listener
+            const downloadBtn = card.querySelector('.btn-download');
+            downloadBtn.addEventListener('click', () => {
+                showDownloadModal(product.download, product.name);
+            });
+            
+            return card;
+        }
+        
+        // ===== Download Modal =====
+        const downloadModal = document.getElementById('downloadModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalCancel = document.getElementById('modalCancel');
+        const modalConfirm = document.getElementById('modalConfirm');
+        const confirmRisks = document.getElementById('confirmRisks');
+        
+        function showDownloadModal(downloadUrl, productName) {
+            currentDownloadUrl = downloadUrl;
+            downloadModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            confirmRisks.checked = false;
+            modalConfirm.disabled = true;
+        }
+        
+        function hideDownloadModal() {
+            downloadModal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentDownloadUrl = '';
+        }
+        
+        modalClose.addEventListener('click', hideDownloadModal);
+        modalCancel.addEventListener('click', hideDownloadModal);
+        
+        confirmRisks.addEventListener('change', (e) => {
+            modalConfirm.disabled = !e.target.checked;
+        });
+        
+        modalConfirm.addEventListener('click', () => {
+            if (confirmRisks.checked && currentDownloadUrl) {
+                // In a real implementation, this would trigger the actual download
+                alert(`Download würde jetzt starten: ${currentDownloadUrl}\n\nHinweis: Dies ist eine Demo. In der finalen Version würde hier der echte Download beginnen.`);
+                hideDownloadModal();
+            }
+        });
+        
+        // Close modal when clicking outside
+        downloadModal.addEventListener('click', (e) => {
+            if (e.target === downloadModal) {
+                hideDownloadModal();
+            }
+        });
+        
+        // ===== Smooth Scroll for Anchor Links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // ===== Initialize =====
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+            
+            // Add fade-in animation for sections
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+    </html>
